@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!--responsividade-->
+    <link rel="stylesheet" href="style/responsive.css">
+
+    <!--owl css-->
+    <link rel="stylesheet" href="css/owl/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl/owl.theme.default.min.css">
+
+
+    <title>NETFLIX CLONE</title>
+</head>
+
+<body>
+   <header>
+       <div class="container">
+           <img id="logo" src="img/logo.png">
+           <nav>
+              
+                <% for(var i=0; i < navMenu.length; i++) {%> 
+                    <a href="#"><%= navMenu[i]  %></a>
+               <% } %> 
+
+           </nav>
+       </div>
+   </header>
+
+   <main>
+       <div class="filme-principal">
+           <div class="container">
+               <h3 class="titulo"></h3>
+               <p class="descricao">
+                </p>
+                
+           </div>
+
+       </div>
+   </main>
+    
+   <h3 class="titulo_secao">Personagens</h3>
+    <div class="carrosel-filmes">
+        <div class="owl-carousel owl-theme">
+            <% for (var i = 0; i < dadosPersonagens.length; i++) { %> 
+                <div class="item" >
+                    <img src="img/personagens/<%= i+1 %>.jpg" class="poster" alt="">
+                    <p><%= dadosPersonagens[i].name  %> </p>
+                    <p><%= dadosPersonagens[i].birth_year  %> </p>
+                    <p><%= dadosPersonagens[i].gender  %> </p>
+                </div>
+            <% } %> 
+        </div>
+    </div>
+
+    <h3 class="titulo_secao">Filmes</h3>
+    <div class="carrosel-filmes">
+        <div class="owl-carousel owl-theme">
+            <% for (var i = 1; i < dadosFilmes.length; i++) { %> 
+                <div class="item">
+                    <img src="img/filmes/<%= i+1 %>.jpg" class="poster" alt="">
+                    <p><%= dadosFilmes[i].title  %> </p>
+                    <p><%= dadosFilmes[i].director  %> </p>
+                </div>
+            <% } %> 
+        </div>
+    </div>
+
+    <h3 class="titulo_secao">Planetas</h3>
+    <div class="carrosel-filmes">
+        <div class="owl-carousel owl-theme">
+            <% for (var i = 0; i < dadosPlanetas.length; i++) { %> 
+                <div class="item">
+                    <img src="img/planetas/<%= i+1 %>.jpg" class="poster" alt="">
+                    <p><%= dadosPlanetas[i].name  %> </p>
+                    <p><%= dadosPlanetas[i].orbital_period  %> </p>
+                    <p><%= dadosPlanetas[i].population  %> </p>
+                </div>
+            <% } %> 
+        </div>
+    </div>
+
+    <h3 class="titulo_secao">Naves</h3>
+    <div class="carrosel-filmes">
+        <div class="owl-carousel owl-theme">
+            <% for (var i = 0; i < dadosNaves.length; i++) { %> 
+                <div class="item"></h4>
+                    <img src="img/naves/<%= i+1 %>.jpg" class="poster" alt="">
+                    <p><%= dadosNaves[i].name  %> </p>
+                    <p><%= dadosNaves[i].model  %> </p>
+                    <p><%= dadosNaves[i].starship_class  %> </p>
+                </div>
+            <% } %> 
+        </div>
+    </div>
+
+   <script src="https://kit.fontawesome.com/d8fa550529.js" crossorigin="anonymous"></script>
+   <script src="js/owl/jquery.min.js"></script>
+   <script src="js/owl/owl.carousel.min.js"></script>
+   <script src="js/owl/setup.js"></script>
+
+</body>
+
+</html>
